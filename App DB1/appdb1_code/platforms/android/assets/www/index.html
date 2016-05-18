@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Hello World</title>
+        
+         <!-- Jquery mobile CSS and JS -->
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+        	
+           <script type="text/javascript" src="js/SQLitePlugin.js"></script>
+           <script type="text/javascript" src="cordova.js"></script>
+	       <script type="text/javascript" src="js/index.js"></script>
+        	<script type="text/javascript" charset="utf-8">
+            	var buy = '';
+				var device_id;
+				var number_of_times;
+            	// Wait for Cordova to load
+				document.addEventListener("deviceready", onDeviceReady, false);
+				
+				// Cordova is ready
+				// Cordova is ready
+				function onDeviceReady() {
+					 device_id = device.uuid ;
+				}
+				
+            </script>
+    </head>
+    <body>
+    
+    <!-- home page started - -->
+        <div data-role="page" id="home" class="home homeapp1" >
+            
+            <div data-role="header" data-position="fixed" class="home_header" style="background-color:#95b758 !important">
+                <div class="heading_text">App Db1</div>
+            </div>
+                
+            <div data-role="content" data-theme="a" class="home_content">
+                
+            <div data-role="tabs" id="tabs">
+            
+                <div data-role="navbar" id="tabs_list">
+                    <ul>
+                      <li><a href="#clothes" data-ajax="false">Clothes</a></li>
+                      <li><a href="#shoes" data-ajax="false">Shoes</a></li>
+                      <li><a href="#watches" data-ajax="false">Watch</a></li>
+                      <li><a href="#backpack" data-ajax="false">Bags</a></li>
+                    </ul>
+                </div>
+                
+                 
+                <div id="clothes" class="ui-body-d ui-content">
+                	
+                    <div class="ui-grid-a">
+                      	
+                      <div class="ui-block-a">
+                        
+                        <a href="#transitionExample1" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/clothes1.jpe" class="image" onClick="itemViewed(1211,'Casual Shirt',25);"></a>
+                        <div data-role="popup" id="transitionExample1" class="ui-content display_none" data-theme="a">
+                         
+                            <div class="clothes1 clothes_section">
+                                <img src="img/clothes1.jpe" class="image imgpop" val>
+                                <div class="toggleinfo" id="a1">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><i><b> Item Name: Casual Shirt</i></b></param></div>
+                                <div class="price"><param class="Pricing" value="25"><i><b>Item Price: $25</b></i></param></div>
+								<div class="price"><param class="Pricing" value="1211"><b><i>Item Code: 1211</i></b></param></div>
+                                <button type="button" class="buy" onClick="Total('Casual Shirt',25);">Buy</button> 
+                                </div>                  
+                            </div>
+                            
+                        </div>
+                      </div>
+                
+                      <div class="ui-block-b">
+                      	
+                        <a href="#transitionExample2" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/clothes2.jpg" class="image" onClick="itemViewed(1212,'T Shirt',30);"></a>
+                        <div data-role="popup" id="transitionExample2" class="ui-content display_none" data-theme="a">
+                         
+                            <div class="clothes2 clothes_section">
+                                <img src="img/clothes2.jpg" class="image imgpop">
+                                <div class="toggleinfo" id="b1">
+                                <div class="price itemnumber"><param class="Pricing Item_number"> <b><i>Item Name: T Shirt </b></i></param></div>
+                                <div class="price"><param class="Pricing" value="30"> <b><i>Price: $30</b></i> </param></div>
+                                <div class="price"><param class="Pricing" value="1212"><b><i>Item Code: 1212</i></b></param></div>
+                                <button type="button" class="buy" onClick="Total('T Shirt',30);">Buy</button>                     
+                                </div>
+                            </div>
+                            
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                    </br>
+                    
+                    <div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                        
+                        <a href="#transitionExample3" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/clothes3.jpg" class="image" onClick="itemViewed(1213,'Formal Shirt',40);"></a>
+                        <div data-role="popup" id="transitionExample3" class="ui-content display_none" data-theme="a">
+                         
+                             <div class="clothes3 clothes_section">
+                                <img class="image imgpop" src="img/clothes3.jpg">
+                                <div class="toggleinfo" id="c1">
+                                <div class="price itemnumber"><param class="Pricing Item_number"> <b><i>Item Name: Formal Shirt</b></i></param></div>
+                                <div class="price"><param class="Pricing" value="40"><b><i>Price: $40</b></i></param> </div>
+                                <div class="price"><param class="Pricing" value="1212"><b><i>Item Code: 1213</i></b></param></div>								
+                                <button type="button" class="buy" onClick="Total('Formal Shirt',40);">Buy</button>                   
+                                </div> 
+                            </div>
+                            
+                        </div>
+                      </div>
+                
+                      <div class="ui-block-b">
+                        
+                        <a href="#transitionExample4" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/clothes4.jpg" class="image" onclick="itemViewed(1214,'Coat',50);"></a>
+                        <div data-role="popup" id="transitionExample4" class="ui-content display_none" data-theme="a">
+                         
+                             <div class="clothes4 clothes_section">
+                                <img class="image imgpop" src="img/clothes4.jpg">
+                                <div class="toggleinfo" id="d1">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><b><i>Item Name: Coat</i></b></param></div>
+                                <div class="price"><param class="Pricing" value="50"><b><i>Price: $50</param></i></b></div>
+                                <div class="price"><param class="Pricing" value="1212"><b><i>Item Code: 1214</i></b></param></div>								
+                                <button type="button" class="buy" onClick="Total('Coat',50);">Buy</button>                     
+                                </div> 
+                            </div>
+                            
+                        </div>
+                      </div>
+                        
+                    </div>
+                    
+                    </br>
+                    
+                    <div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                        
+                        <a href="#transitionExample5" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/clothes5.jpe" class="image" onclick="itemViewed(1215,'Regular T Shirt',10);"></a>
+                        <div data-role="popup" id="transitionExample5" class="ui-content display_none" data-theme="a">
+                         
+                          <div class="clothes5 clothes_section">
+                                <img class="image imgpop" src="img/clothes5.jpe">
+                                <div class="toggleinfo" id="e1">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><b><i> Item Name: Regular T Shirt</i></b></param></div>
+                                <div class="price"><param class="Pricing" value="40"><b><i>Price: $10</i></b></param> </div>
+                                <div class="price"><param class="Pricing" value="1212"><b><i>Item Code: 1215</i></b></param></div>								
+								<button type="button" class="buy" onClick="Total('Regular T Shirt',10);">Buy</button>                     
+                                </div> 
+                          </div>
+                            
+                        </div>
+                      </div>
+                                           
+                    </div>
+                            
+                  </div>  
+                      
+                <div id="shoes">
+                  
+                    <div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                      	
+                        <a href="#transitionExample6" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/shoes1.jpg" class="image" onclick="itemViewed(1311,'Yellow Air Jordan',120);"></a>
+                        <div data-role="popup" id="transitionExample6" class="ui-content display_none" data-theme="a">
+                         
+                          <div class="shoes1 clothes_section">
+                            <img src="img/shoes1.jpg" class="image imgpop">
+                            <div class="toggleinfo" id="a2">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><b><i>Item Name: Yellow Air jordan</i></b></param></div>
+                                <div class="price"><b><i>Price: $120 </i></b></div>
+                                <div class="price"><param class="Pricing" value="1212"><b><i>Item Code: 1311</i></b></param></div>
+                                <button type="button" class="buy"  onClick="Total('Yellow Air Jordan',120);">Buy</button>  
+                            </div> 
+                          </div>
+                            
+                        </div>
+                      </div>
+                
+                    <div class="ui-block-b">
+                        
+                         <a href="#transitionExample7" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/shoes2.jpe" class="image" onclick="itemViewed(1312,'Air Max',200);"></a>
+                        <div data-role="popup" id="transitionExample7" class="ui-content display_none" data-theme="a">
+                         
+                             <div class="shoes2 clothes_section">
+                                <img src="img/shoes2.jpe" class="image imgpop">
+                                <div class="toggleinfo" id="b2">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><b><i>Item Name: Air Max</i></b></param></div>
+                                <div class="price"><b><i>Price: $200</i></b> </div>
+                                <div class="price"><param class="Pricing" value="1212"><b><i>Item Code: 1312</i></b></param></div>
+                                <button type="button" class="buy" onClick="Total('Air Max',200)">Buy</button>                     
+                             </div>
+                            
+                        </div>
+                      </div>
+                    </div>    
+                  </div>
+                    
+                    </br>
+                    
+                    <div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                      	
+                        <a href="#transitionExample8" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/shoes3.jpg" class="image" onclick="itemViewed(1313,'White Air Jordan',150);"></a>
+                        <div data-role="popup" id="transitionExample8" class="ui-content display_none" data-theme="a">
+                         
+                          <div class="shoes3 clothes_section ">
+                            <img src="img/shoes3.jpg" class="image imgpop">
+                            <div class="toggleinfo" id="c2">
+                                <div class="price itemnumber"><param class="Pricing Item_number"> <b><i>Item Name: White Air Jordan</i></b></param></div>
+                                <div class="price"><b><i>Price: $150 </i></b></div>
+                                <div class="price"><param class="Pricing" value="1212"><b><i>Item Code: 1313</i></b></param></div>
+                                <button type="button" class="buy"  onClick="Total('White Air Jordan',150);">Buy</button>  
+                            </div> 
+                          </div>
+                            
+                        </div>
+                      </div>
+                
+                      <div class="ui-block-b">
+                        
+                         <a href="#transitionExample9" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/shoes4.jpg" class="image" onclick="itemViewed(1314,'Blue Air Jordan',120);"></a>
+                        <div data-role="popup" id="transitionExample9" class="ui-content display_none" data-theme="a">
+                         
+                             <div class="shoes2 clothes_section">
+                                <img src="img/shoes4.jpg" class="image imgpop">
+                                <div class="toggleinfo" id="d2">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><b><i> Item Name: Blue Air Jordan</i></b></param></div>
+                                <div class="price"><b><i>Price: $120 </i></b></div>
+                                <div class="price"><param class="Pricing" value="1212"><b><i>Item Code: 1314</i></b></param></div>
+                                <button type="button" class="buy" onClick="Total('Blue Air Jordan',120)">Buy</button>                     
+                             </div>
+                            
+                        </div>
+                      </div>
+                    </div>    
+                  </div>
+                    
+                    </br>
+                    
+                    <div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                        
+                        <a href="#transitionExample10" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/shoes5.jpe" class="image" onclick="itemViewed(1315,'Nike Sneakers',50);"></a>
+                        <div data-role="popup" id="transitionExample10" class="ui-content display_none" data-theme="a">
+                         
+                          <div class="shoes3 clothes_section ">
+                            <img src="img/shoes5.jpe" class="image imgpop">
+                            <div class="toggleinfo" id="e2">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><b><i>Item Name: Nike Sneakers</i></b></param></div>
+                                <div class="price"><b><i>Price: $50 </i></b> </div>
+                                <div class="price"><param class="Pricing" value="1212"><b><i>Item Code: 1315</i></b></param></div>
+                                <button type="button" class="buy"  onClick="Total('Nike Sneakers',50);">Buy</button>  
+                            </div> 
+                          </div>
+                            
+                        </div>
+                      </div>
+                
+                    </div>
+                            
+                </div>
+    
+               
+                 <div id="watches">
+                   
+                 	<div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                      	
+                        <a href="#transitionExample11" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/watch1.jpg" class="image" onclick="itemViewed(1411,'Fossil',200);"></a>
+                        <div data-role="popup" id="transitionExample11" class="ui-content display_none" data-theme="a">
+                         
+                          <div class="watch2 clothes_section">
+                            <img src="img/watch1.jpg" class="image">
+                            <div class="toggleinfo" id="a3">
+                            <div class="price itemnumber"><param class="Pricing Item_number"><b><i> Item Name: Fossil</i></b></param></div>
+                            <div class="price"><b><i>Price: $200 </i></b></div>
+                            <div class="price"><param class="Pricing" value="1212"><b><i>Item Code: 1411</i></b></param></div>						
+                            <button type="button" class="buy" onClick="Total('Fossil',200)">Buy</button>                     
+                            </div>
+                        </div>
+                            
+                        </div>
+                      </div>
+                                      
+                      <div class="ui-block-b">
+                        
+                         <a href="#transitionExample12" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/watch2.jpe" class="image" onclick="itemViewed(1412,'Swiss Watch',120);"></a>
+                        <div data-role="popup" id="transitionExample12" class="ui-content display_none" data-theme="a">
+                         
+                             <div class="shoes2 clothes_section">
+                                <img src="img/watch2.jpe" class="image imgpop">
+                                <div class="toggleinfo" id="b3">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><b><i> Item Name: Swiss Watch</i></b></param></div>
+                                <div class="price"><b><i>Price: $120</i></b> </div>
+                                <div class="price"><param class="Pricing" value="1412"><b><i>Item Code: 1412</i></b></param></div>						
+                                <button type="button" class="buy" onClick="Total('Swiss Watch',120)">Buy</button>                     
+                             </div>
+                            
+                        </div>
+                      </div>
+                    </div>    
+                  </div>
+                    
+                    </br>
+                    
+                    <div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                      	
+                        <a href="#transitionExample13" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/watch3.jpg" class="image" onclick="itemViewed(1413,'Stuhrling Watch',150);"></a>
+                        <div data-role="popup" id="transitionExample13" class="ui-content display_none" data-theme="a">
+                         
+                          <div class="watch3 clothes_section">
+                            <img class="image imgpop" src="img/watch3.jpg">
+                            <div class="toggleinfo" id="c3">
+                            <div class="price itemnumber"><param class="Pricing Item_number"> <b><i>Item Name: Stuhrling Watch</i></b></param></div>
+                            <div class="price"><b><i>Price:- $150</i></b> </div>
+                            <div class="price"><param class="Pricing" value="1413"><b><i>Item Code: 1413</i></b></param></div>
+                            <button type="button" class="buy" onClick="Total('Stuhrling Watch',150)">Buy</button>                     
+                            </div> 
+                        </div>
+                            
+                        </div>
+                      </div>
+                
+                      <div class="ui-block-b">
+                        
+                         <a href="#transitionExample14" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/watch4.jpg" class="image" onclick="itemViewed(1414,'Citizen Watch',150);"></a>
+                        <div data-role="popup" id="transitionExample14" class="ui-content display_none" data-theme="a">
+                         
+                            <div class="watch4 clothes_section">
+                                <img src="img/watch4.jpg" class="image imgpop">
+                                <div class="toggleinfo" id="d3">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><b><i> Item Name: Citizen Watch</i></b></param></div>
+                                <div class="price"><b><i>Price: $150 </i></b> </div>
+                                <div class="price"><param class="Pricing" value="1413"><b><i>Item Code: 1414</i></b></param></div>
+                                <button type="button" class="buy" onClick="Total('Citizen Watch',150)">Buy</button>                     
+                             </div>
+                            
+                        </div>
+                      </div>
+                    </div>    
+                  </div>  
+                    
+                    </br>
+                    
+                    <div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                      
+                        <a href="#transitionExample15" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/watch5.jpe" class="image" onclick="itemViewed(1415,'Reebok Watch',50);"></a>
+                        <div data-role="popup" id="transitionExample15" class="ui-content display_none" data-theme="a">
+                         
+                          <div class="watch5 clothes_section ">
+                            <img src="img/watch5.jpe" class="image imgpop">
+                            <div class="toggleinfo" id="e3">
+                                <div class="price itemnumber"><param class="Pricing Item_number"> <b><i>Item Name: Reebok Watch</i></b></param></div>
+                                <div class="price"><b><i>Price: $50</i></b> </div>
+                                <div class="price"><param class="Pricing" value="1415"><b><i>Item Code: 1415</i></b></param></div>
+                                <button type="button" class="buy"  onClick="Total('Reebok Watch',50);">Buy</button>  
+                            </div> 
+                          </div>
+                        </div>
+                      </div>            
+                    </div>
+                  
+                </div>
+    
+               
+                 <div id="backpack">
+                    
+                    <div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                      	
+                        <a href="#transitionExample16" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/bag1.png" class="image" onclick="itemViewed(1511,'College Bag',40);"></a>
+                        <div data-role="popup" id="transitionExample16" class="ui-content display_none" data-theme="a">
+                         
+                          <div class="bag1 clothes_section">
+                            <img src="img/bag1.png" class="image">
+                            <div class="toggleinfo" id="a4">
+                            <div class="price itemnumber"><param class="Pricing Item_number"><b><i> Item Name: College Bag</i></b></param></div>
+                            <div class="price"><b><i>Price: $40 </i></b></div>
+                            <div class="price"><param class="Pricing" value="1415"><b><i>Item Code: 1511</i></b></param></div>
+                            <button type="button" class="buy" onClick="Total('College Bag',40)">Buy</button>                     
+                            </div>
+                        </div>
+                            
+                        </div>
+                      </div>
+                                      
+                      <div class="ui-block-b">
+                        
+                         <a href="#transitionExample17" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/bag2.jpg" class="image" onclick="itemViewed(1512,'Army Camo Bag',80);"></a>
+                        <div data-role="popup" id="transitionExample17" class="ui-content display_none" data-theme="a">
+                         
+                             <div class="bag2 clothes_section">
+                                <img src="img/bag2.jpg" class="image imgpop">
+                                <div class="toggleinfo" id="b4">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><b><i> Item Name: Army Camo Bag</i></b></param></div>
+                                <div class="price"><b><i>Price: $80</i></b> </div>
+                                <div class="price"><param class="Pricing" value="1415"><b><i>Item Code: 1512</i></b></param></div>
+                                <button type="button" class="buy" onClick="Total('Army Camo Bag',80)">Buy</button>                     
+                             </div>
+                            
+                        </div>
+                      </div>
+                    </div>    
+                  </div>
+                    
+                    </br>
+                    
+                    <div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                      	
+                        <a href="#transitionExample18" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/bag3.jpe" class="image" onclick="itemViewed(1513,'Laptop Bag',35);"></a>
+                        <div data-role="popup" id="transitionExample18" class="ui-content display_none" data-theme="a">
+                         
+                          <div class="bag3 clothes_section">
+                            <img class="image imgpop" src="img/bag3.jpe">
+                            <div class="toggleinfo" id="c4">
+                            <div class="price itemnumber"><param class="Pricing Item_number"><b><i> Item Name: Laptop Bag</i></b></param></div>
+                            <div class="price"><b><i>Price: $35 </i></b></div>
+                            <div class="price"><param class="Pricing" value="1415"><b><i>Item Code: 1513</i></b></param></div>
+                            <button type="button" class="buy" onClick="Total('Laptop Bag',35)">Buy</button>                     
+                            </div> 
+                        </div>
+                            
+                        </div>
+                      </div>
+                
+                      <div class="ui-block-b">
+                        
+                         <a href="#transitionExample19" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/bag4.jpg" class="image" onclick="itemViewed(1514,'Nike Red Bag',65);"></a>
+                        <div data-role="popup" id="transitionExample19" class="ui-content display_none" data-theme="a">
+                         
+                            <div class="bag4 clothes_section">
+                                <img src="img/bag4.jpg" class="image imgpop">
+                                <div class="toggleinfo" id="d4">
+                                <div class="price itemnumber"><param class="Pricing Item_number"><b><i> Item Name: Nike Red Bag</i></b></param></div>
+                                <div class="price"><b><i>Price: $65 </i></b></div>
+                                <div class="price"><param class="Pricing" value="1415"><b><i>Item Code: 1514</i></b></param></div>
+                                <button type="button" class="buy" onClick="Total('Nike Red Bag',65)">Buy</button>                     
+                             </div>
+                            
+                        </div>
+                      </div>
+                    </div>    
+                  </div>  
+                    
+                    </br>
+                    
+                    <div class="ui-grid-a">
+                      
+                      <div class="ui-block-a">
+                      
+                        <a href="#transitionExample20" data-transition="flip" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window"><img src="img/bag5.jpg" class="image" onclick="itemViewed(1515,'Multipurpose Bag',70);"></a>
+                        <div data-role="popup" id="transitionExample20" class="ui-content display_none" data-theme="a">
+                         
+                          <div class="bag5 clothes_section ">
+                            <img src="img/bag5.jpg" class="image imgpop">
+                            <div class="toggleinfo" id="e5">
+                                <div class="price itemnumber"><param class="Pricing Item_number"> <b><i>Item Name: Multipurpose Bag</i></b></param></div>
+                                <div class="price"><b><i>Price:- $70 </i></b></div>
+                                <div class="price"><param class="Pricing" value="1415"><b><i>Item Code: 1515</i></b></param></div>
+                                <button type="button" class="buy"  onClick="Total('Multipurpose Bag',70);">Buy</button>  
+                            </div> 
+                          </div>
+                        </div>
+                      </div>            
+                    </div>          
+                        
+
+            </div>  
+            
+            </div>
+            
+            </div>
+<!---------- home page ends --- -->
+        
+    </body>
+</html>
