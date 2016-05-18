@@ -1,0 +1,41 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.android.mall"
+        },
+        "com.lampa.startapp": {
+            "PACKAGE_NAME": "com.android.mall"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.android.mall"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.android.mall"
+        },
+        "io.github.tortoyoyo.toast": {
+            "PACKAGE_NAME": "com.android.mall"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.android.mall"
+        }
+    },
+    "dependent_plugins": {}
+}
